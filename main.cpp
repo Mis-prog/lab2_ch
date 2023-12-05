@@ -1,6 +1,8 @@
-#include <iostream>
+#include "task1.h"
+#include "task2.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+int main(){
+    SetConsoleOutputCP(CP_UTF8);
+    task1_main();
     return 0;
 }
