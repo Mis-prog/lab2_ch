@@ -243,12 +243,11 @@ double Ex3_Point1()
     }
 
     double I1 = Rect_Sum(n1), I2 = Rect_Sum(n2), I3 = Rect_Sum(n3);
-    //cout << I1 << " " << I2 << " " << I3 << " \n";
     double B = (I1 - I2) / (I2 - I3);
     double p = - log(B) / log(q);
     return p;
 }
-void Ex3_Point2()
+void Rung()
 {
     int n = 1000;
     double p = Ex3_Point1();
@@ -256,7 +255,7 @@ void Ex3_Point2()
     cout << " p = " << " " <<  p << "\n";
     // метод рунге 
     double I2n = Rect_Sum(2 * n), In = Rect_Sum(n);
-    double I = I2n + (I2n - In) / (pow(2, p) - 1);
+    double I = I2n +pow(2, p)*(In - I2n) /(double) (pow(2, p) - 1);
     double accurateI = 1.570796327;
     cout.precision(7);
     cout << " my integral = " << I << " actual integral is  " << accurateI << "\n";
@@ -292,7 +291,7 @@ double R(int n, int m, double a, double b) {
     }
 }
 
-void Ex3_Point3Richardson() {
+void Ronberg() {
     double r = 0.0, a = 0.0, b = PI / 2;
     int n=0;
     double accurateI = 1.570796327;
@@ -519,13 +518,13 @@ void Ex6()
 int main()
 {
     setlocale(LC_CTYPE, "Russian");
-    Ex1_Point2();
+    //Ex1_Point2();
     //Ex1_Point3();
 
     //Ex2_Point2();
     //Ex2_Point3();
-    //Ex3_Point2();
-    
+    //cout << Ex3_Point1();
+    Rung();
     //Ex3_Point3Richardson();
     //Ex4();
     //Ex4_Graphic();
