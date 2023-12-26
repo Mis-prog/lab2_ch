@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('D:/5sem/numerical/Lab2/cmake-build-debug/task6.txt', sep=' ', names=['x', 'y'])
+df = pd.read_csv('D:/5sem/numerical/practice/labs/Lab2/cmake-build-debug/task6.txt', sep=' ', names=['x', 'y'])
 
 plt.plot(df['x'], df['y'], color='green')
 

@@ -18,10 +18,14 @@ double Monte_Carlo(int n) {
 
 void task6_main() {
     ofstream out6;
+    double best_node=-11;
     out6.open("task6.txt");
     for (int i = 1; i < 2e3; i++) {
         out6 << i << " " << abs(epsilon - Monte_Carlo(i)) << endl;
+        if (abs(epsilon - Monte_Carlo(i)) > best_node) {
+            best_node = abs(epsilon - Monte_Carlo(i));
+        }
     }
     out6.close();
-    system("python D:/5sem/numerical/Lab2/src/plot/plot_6.py");
+    system("python D:\\5sem\\numerical\\practice\\labs\\Lab2\\src\\plot\\plot_6.py");
 }
